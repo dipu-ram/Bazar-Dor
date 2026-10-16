@@ -1,10 +1,10 @@
+
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
-import { getProducts } from "@/lib/api";
 
 export const metadata: Metadata = {
   title: {
@@ -22,19 +22,17 @@ export const viewport: Viewport = {
   themeColor: "#16794b",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const products = await getProducts();
-
   return (
     <html lang="bn">
       <body className="min-h-screen antialiased">
         <Providers>
           <div className="flex min-h-screen flex-col">
-            <Navbar products={products} />
+            <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>

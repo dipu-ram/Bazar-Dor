@@ -5,8 +5,9 @@ const API_BASE_URLS = [
   process.env.BAZARDOR_API_URL,
   "https://api.api-store.workers.dev/api/bazardor",
   "https://api.abcz.workers.dev/api/bazardor",
-].filter((url, index, all): url is string =>
-  Boolean(url) && all.indexOf(url) === index
+].filter(
+  (url, index, all): url is string =>
+    Boolean(url) && all.indexOf(url) === index
 );
 
 async function requestApi(path: string): Promise<unknown> {
@@ -16,14 +17,13 @@ async function requestApi(path: string): Promise<unknown> {
     try {
       const response = await fetch(`${baseUrl}${path}`, {
         headers: { Accept: "application/json" },
-        cache: "no-store",
+        next: { revalidate: 60 },
         signal: AbortSignal.timeout(8000),
       });
 
       if (!response.ok) {
         lastError = new Error(`API request failed: ${response.status}`);
 
-        // Rate limited or unavailable: try the alternate API.
         if (response.status === 429 || response.status >= 500) {
           continue;
         }

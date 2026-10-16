@@ -1,3 +1,4 @@
+
 import type { Product } from "@/types/bazardor";
 
 import PriceTicker from "@/components/PriceTicker";
@@ -11,7 +12,6 @@ export const revalidate = 60;
 
 export default async function HomePage() {
   let products: Product[] = [];
-  
 
   try {
     const result = await getProducts();

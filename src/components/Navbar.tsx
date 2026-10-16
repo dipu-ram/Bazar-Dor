@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 
+
+
 const categories = [
   { name: "সব পণ্য", slug: "" },
   { name: "চাল", slug: "chal" },
