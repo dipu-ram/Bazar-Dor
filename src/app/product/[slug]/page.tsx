@@ -551,10 +551,7 @@ export default async function ProductDetailsPage({
             </table>
           </div>
 
-          <p className="border-t border-[#e4eae4] px-6 py-4 text-xs leading-5 text-[#89958c]">
-            বাজারের তথ্য নমুনা হিসেবে দেওয়া হয়েছে। প্রকৃত বাজারদর দেখাতে
-            API-তে বাজারভিত্তিক তথ্য থাকতে হবে।
-          </p>
+          
         </section>
 
         <div className="mt-8">
