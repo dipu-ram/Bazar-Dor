@@ -46,17 +46,8 @@ export default async function HomePage() {
               পণ্যের তথ্য পাওয়া যাচ্ছে না।
             </h2>
 
-            <p className="mt-2 text-sm text-gray-500">
-              API সংযোগ পরীক্ষা করে কিছুক্ষণ পরে আবার চেষ্টা করুন।
-            </p>
-
-            <button
-              type="button"
-              onClick={() => window.location.reload()}
-              className="mt-4 rounded-lg bg-green-700 px-5 py-2 text-sm font-semibold text-white transition hover:bg-green-800"
-            >
-              আবার চেষ্টা করুন
-            </button>
+            
+            
           </div>
         )}
       </section>
